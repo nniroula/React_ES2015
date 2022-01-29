@@ -4,3 +4,17 @@ function choice(items){
    let random_index = Math.floor(Math.random() * items.length); // floor rounds down
    return items[random_index];
 }
+
+function remove(items, item){
+    for(let i = 0; i < items.length; i++){
+        if(items[i] === item){
+            return [...items.slice(0, i), ...items.slice(i + 1)];
+        }
+    }
+}
+
+// export both funtions at once
+// this is named export
+export {choice, remove}
+
+// default export would be export default choice
